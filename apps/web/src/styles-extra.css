@@ -1,0 +1,5 @@
+.demo-pill { display:inline-block; vertical-align:middle; font-family:'DM Sans'; font-size:9px; letter-spacing:.12em; color:var(--ink); background:var(--acid); border:1px solid var(--ink); padding:3px 6px; margin-left:6px; }
+.draft select { width:100%; padding:10px; border:2px solid; background:white; font:inherit; }
+.instructions { display:grid; gap:12px; padding-left:22px; line-height:1.45; }
+.instructions code { background:#eadde8; padding:2px 5px; }
+.github-link { display:inline-block; background:var(--mint); color:var(--ink); font-weight:800; border:2px solid; padding:11px 16px; box-shadow:3px 3px var(--pink); text-decoration:none; margin-top:12px; }
