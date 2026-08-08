@@ -1,0 +1,11 @@
+{
+  "name": "opp-send",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": ["apps/*", "packages/*"],
+  "scripts": {
+    "dev": "npm run dev --workspace @opp-send/web",
+    "build": "npm run build --workspace @opp-send/web",
+    "check": "npm run build"
+  }
+}

@@ -1,0 +1,109 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #f8f7fb;
+  background: #110d18;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  width: 100%;
+  min-width: 340px;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 90% 5%, rgba(255, 38, 175, .28), transparent 35%),
+    radial-gradient(circle at 5% 45%, rgba(48, 255, 198, .12), transparent 34%),
+    #110d18;
+}
+
+button, input, textarea, select { font: inherit; }
+
+.shell { width: 100%; max-width: 720px; margin: 0 auto; padding: 18px 20px 32px; }
+.hidden { display: none !important; }
+
+.topbar { display: flex; align-items: center; gap: 6px; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid #30243a; }
+.tab { border: 1px solid transparent; border-radius: 999px; padding: 7px 11px; color: #a99bb6; background: transparent; cursor: pointer; font-size: 12px; font-weight: 800; }
+.tab.active { color: #120c17; background: #2fffc8; }
+.panel-label { margin-left: auto; color: #74677f; font-size: 11px; }
+
+.creature-row {
+  display: grid;
+  grid-template-columns: 76px 1fr;
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.creature {
+  position: relative;
+  width: 76px;
+  height: 76px;
+  border: 2px solid #2fffc8;
+  border-radius: 46% 54% 44% 56%;
+  background: linear-gradient(145deg, #16c89b, #08765f 70%);
+  box-shadow: 0 0 24px rgba(47, 255, 200, .25), inset 0 -10px 22px rgba(0,0,0,.28);
+}
+
+.eye {
+  position: absolute;
+  top: 21px;
+  width: 14px;
+  height: 18px;
+  border-radius: 50%;
+  background: #0b0710;
+  box-shadow: inset 3px 3px #fff;
+}
+.eye-left { left: 17px; transform: rotate(8deg); }
+.eye-right { right: 17px; transform: rotate(-8deg); }
+.tentacle { position: absolute; left: 13px; bottom: 4px; color: #baffed; font-weight: 900; letter-spacing: -4px; }
+
+.eyebrow { margin: 0 0 5px; color: #b69fca; font-size: 11px; font-weight: 800; letter-spacing: .12em; }
+.creature-copy { margin: 0; color: #f8f7fb; font-size: 14px; font-weight: 650; line-height: 1.35; }
+h1 { margin: 0 0 8px; font-size: 25px; line-height: 1.08; letter-spacing: -.025em; }
+.lede { margin: 0 0 20px; color: #bbb0c8; line-height: 1.45; }
+.privacy { margin: 12px 0 0; color: #877994; font-size: 12px; text-align: center; }
+
+.button {
+  width: 100%;
+  min-height: 46px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-weight: 800;
+}
+.button:disabled { cursor: wait; opacity: .65; }
+.primary { color: #120c17; background: #2fffc8; box-shadow: 0 7px 24px rgba(47,255,200,.14); }
+.primary:hover { background: #6affd8; }
+.secondary { color: #e9e2ef; background: #22192d; border-color: #483a57; }
+
+label { display: block; margin: 0 0 12px; color: #cbbfd5; font-size: 12px; font-weight: 750; }
+input, textarea, select {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  border: 1px solid #493a59;
+  border-radius: 8px;
+  padding: 10px 11px;
+  color: #faf8fc;
+  background: rgba(34, 25, 45, .92);
+  outline: none;
+}
+input:focus, textarea:focus, select:focus { border-color: #2fffc8; box-shadow: 0 0 0 2px rgba(47,255,200,.12); }
+textarea { resize: vertical; min-height: 92px; }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.score-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 18px; }
+.score-grid { display: grid; grid-template-columns: repeat(2, minmax(100px, 1fr)); gap: 22px; }
+.score-row h1 { font-size: 34px; }
+.pill { padding: 7px 9px; border: 1px solid #4e3d5e; border-radius: 999px; color: #d5c7df; font-size: 11px; white-space: nowrap; }
+.saved-card { display: grid; gap: 7px; padding: 16px; border: 1px solid #4c3b5b; border-radius: 10px; background: #21182b; color: #bfb1ca; }
+.saved-card strong { color: #f8f7fb; }
+.error { margin: 14px 0 0; padding: 11px; border: 1px solid #ff5c9f; border-radius: 8px; color: #ffd6e7; background: rgba(255, 36, 130, .12); font-size: 13px; }
+
+@media (min-width: 560px) {
+  .shell { padding-left: 28px; padding-right: 28px; }
+  #opportunity-form { display: grid; grid-template-columns: 1fr 1fr; gap: 0 14px; }
+  #opportunity-form > label:nth-of-type(5), #opportunity-form > label:nth-of-type(6), #opportunity-form > button { grid-column: 1 / -1; }
+}

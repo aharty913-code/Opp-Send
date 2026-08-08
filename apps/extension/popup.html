@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Opp-Send</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <nav class="topbar" aria-label="Extension sections">
+        <button id="hunt-tab" class="tab active" type="button">Hunt</button>
+        <button id="profile-tab" class="tab" type="button">Fit profile</button>
+        <span class="panel-label">Creature panel</span>
+      </nav>
+
+      <section class="creature-row" aria-label="Opportunity creature status">
+        <div class="creature" aria-hidden="true">
+          <span class="eye eye-left"></span><span class="eye eye-right"></span>
+          <span class="tentacle">∿∿∿</span>
+        </div>
+        <div>
+          <p class="eyebrow">OPP-SEND</p>
+          <p id="creature-copy" class="creature-copy">I smell employment. Open a listing and let me judge it.</p>
+        </div>
+      </section>
+
+      <section id="scan-view" class="view">
+        <h1>Feed me this page?</h1>
+        <p class="lede">I will extract the useful parts and leave most of the corporate mist on the plate.</p>
+        <button id="scan-button" class="button primary">Inspect this opportunity</button>
+        <p class="privacy">Access lasts only for this tab after you click.</p>
+      </section>
+
+      <section id="review-view" class="view hidden">
+        <div class="score-row">
+          <div class="score-grid">
+            <div><p class="eyebrow">LISTING QUALITY</p><h1 id="listing-score">—</h1></div>
+            <div><p class="eyebrow">PERSONAL FIT</p><h1 id="fit-score">—</h1></div>
+          </div>
+          <span id="confidence" class="pill">Awaiting digestion</span>
+        </div>
+
+        <form id="opportunity-form">
+          <label>Job title<input id="title" name="title" autocomplete="off" /></label>
+          <label>Company<input id="company" name="company" autocomplete="organization" /></label>
+          <div class="field-row">
+            <label>Location<input id="location" name="location" /></label>
+            <label>Salary<input id="salary" name="salary" /></label>
+          </div>
+          <label>Listing URL<input id="url" name="url" type="url" /></label>
+          <label>Description<textarea id="description" name="description" rows="5"></textarea></label>
+          <label>Resume variant
+            <select id="resume" name="resume">
+              <option>SDR / Outbound Resume v3</option>
+              <option>General Sales Resume</option>
+              <option>No resume selected</option>
+            </select>
+          </label>
+          <button class="button primary" type="submit">Catalog the meal</button>
+          <button id="rescan-button" class="button secondary" type="button">Digest again</button>
+        </form>
+      </section>
+
+      <section id="profile-view" class="view hidden">
+        <p class="eyebrow">WHAT COUNTS AS NUTRITIOUS?</p>
+        <h1>Teach the creature your appetite.</h1>
+        <p class="lede">Without this, I can grade the listing’s transparency. I cannot divine whether you personally want the damn job.</p>
+        <form id="profile-form">
+          <label>Target job titles
+            <input id="target-titles" name="targetTitles" placeholder="SDR, account executive, sales development" />
+          </label>
+          <label>Evidence and skill keywords
+            <input id="target-keywords" name="targetKeywords" placeholder="outbound, HubSpot, SaaS, discovery" />
+          </label>
+          <label>Preferred locations or arrangements
+            <input id="target-locations" name="targetLocations" placeholder="remote, Fredericksburg, hybrid" />
+          </label>
+          <label>Minimum acceptable salary
+            <input id="minimum-salary" name="minimumSalary" type="number" min="0" step="1000" placeholder="60000" />
+          </label>
+          <label>Resume evidence
+            <textarea id="resume-evidence" name="resumeEvidence" rows="7" placeholder="Paste representative resume text. Stored only in Chrome for this prototype."></textarea>
+          </label>
+          <button class="button primary" type="submit">Save my appetite</button>
+        </form>
+      </section>
+
+      <section id="saved-view" class="view hidden">
+        <h1>The meal has been catalogued.</h1>
+        <p id="saved-summary" class="lede"></p>
+        <div class="saved-card">
+          <strong>Saved locally</strong>
+          <span>Next action: finish the application</span>
+        </div>
+        <button id="another-button" class="button primary">Continue hunting</button>
+        <button id="export-button" class="button secondary">Copy saved opportunities</button>
+      </section>
+
+      <p id="error" class="error hidden" role="alert"></p>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

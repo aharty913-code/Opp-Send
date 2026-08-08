@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Opp-Send: Opportunity Eater",
+  "version": "0.2.2",
+  "description": "Feed job listings to a discerning little employment horror.",
+  "minimum_chrome_version": "114",
+  "permissions": ["activeTab", "scripting", "storage", "sidePanel"],
+  "host_permissions": ["https://www.linkedin.com/*"],
+  "action": {
+    "default_title": "Open the Opp-Send creature panel"
+  },
+  "side_panel": {
+    "default_path": "popup.html"
+  },
+  "background": {
+    "service_worker": "service-worker.js"
+  }
+}
